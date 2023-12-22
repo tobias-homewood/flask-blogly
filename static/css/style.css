@@ -1,0 +1,25 @@
+/* debug */
+/* * {
+    border: 1px solid red;
+} */
+/* end debug */
+
+.profile-picture-container {
+    width: 300px;
+    height: 300px;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-picture {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.btn-info {
+    color: #fff;
+}

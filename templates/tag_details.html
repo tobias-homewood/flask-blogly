@@ -1,0 +1,30 @@
+{% extends "layout.html" %} 
+
+{% block title %}
+{{ tag.name }}
+{% endblock %} 
+
+{% block content %}
+<form
+    action="{{ url_for('delete_tag', tag_id=tag.id) }}"
+    method="POST">
+    <h1>{{ tag.name }}</h1>
+    <ul>
+        {% for post in tag.posts %}
+            <li>
+                <a href="{{ url_for('post_details', post_id=post.id) }}">
+                    {{ post.title }}
+                </a>
+            </li>
+        {% else %}
+            <li>No posts found with this tag</li>
+        {% endfor %}
+    </ul>
+    <a class="btn btn-primary" href="{{ url_for('edit_tag', tag_id=tag.id) }}">
+        Edit
+    </a>
+    <button type="submit" class="btn btn-danger">
+        Delete</a
+    >
+</form>
+{% endblock %}
